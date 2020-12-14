@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table id="epl_table">
+        <tr>
+            <th>Position</th>
+            <th>Team</th>
+            <th>Games Played</th>
+            <th>Wins</th>
+            <th>Draws</th>
+            <th>Losses</th>
+            <th>Goal Differential</th>
+            <th>Points</th>
+        </tr>
+        <% for (var i=0;i<theData.length;i++) { %>
+            <tr>
+                <td><%= theData[i].position %></td>
+                <td><%= theData[i].team_name %></td>
+                <td><%= theData[i].games_played %></td>
+                <td><%= theData[i].wins %></td>
+                <td><%= theData[i].draws %></td>
+                <td><%= theData[i].losses %></td>
+                <td><%= theData[i].goal_differential %></td>
+                <td><%= theData[i].points %></td>
+            </tr>
+          <% } %>
+        
+    </table>
+       
+    
+    
+</body>
+</html>
