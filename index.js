@@ -22,6 +22,8 @@ function update_db(py_file_name){
 let laliga_data=[]
 let bundesliga_data=[];
 let epl_data=[];
+let seriea_data=[];
+let ligue1_data=[];
 
 
 async function get_data(py_file_name,db_name,data_array,callback){
@@ -48,6 +50,8 @@ async function get_data(py_file_name,db_name,data_array,callback){
 get_data('epl.py','epl_table',epl_data,update_db);
 get_data('laliga.py','laliga_table',laliga_data,update_db)
 get_data('bundesliga.py','bundesliga_table',bundesliga_data,update_db);
+get_data('seriea.py','seriea_table',seriea_data,update_db);
+get_data('ligue1.py','ligue1_table',ligue1_data,update_db);
 
 
 app.set('view engine','ejs')
@@ -58,13 +62,13 @@ app.get('/',(req,res)=>{
 app.get('/epl',(req,res)=>{
     console.log('EPL get request');
     //epl_data has every row now, with all info
-    console.log(epl_data[1].team_name);
+    //console.log(epl_data[1].team_name);
     res.render('epl',{theData: epl_data});
 });
 
 app.get('/bundesliga',(req,res)=>{
     console.log('Bundesliga get request');
-    console.log(bundesliga_data[1].team_name);
+    //console.log(bundesliga_data[1].team_name);
     res.render('bundesliga',{theData: bundesliga_data});
 });
 
@@ -74,7 +78,18 @@ app.get('/laliga',(req,res)=>{
     res.render('laliga',{theData: laliga_data});
     //res.send('debugging')
 });
-
+app.get('/seriea',(req,res)=>{
+    console.log('Serie A get request');
+    //console.log(laliga_data[0].team_name);
+    res.render('seriea',{theData: seriea_data});
+    //res.send('debugging')
+});
+app.get('/ligue1',(req,res)=>{
+    console.log('Ligue 1 get request');
+    //console.log(laliga_data[0].team_name);
+    res.render('ligue1',{theData: ligue1_data});
+    //res.send('debugging')
+});
 
 app.listen(port,(portNum)=> console.log(port+' listening'));
 
