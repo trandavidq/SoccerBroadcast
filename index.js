@@ -25,6 +25,7 @@ let epl_data=[];
 
 
 async function get_data(py_file_name,db_name,data_array,callback){
+    //this function updates the db, then updates the arrays with the data from each row
     await callback(py_file_name);
     let db = new sqlite3.Database('./'+db_name+'.db', sqlite3.OPEN_READONLY,(err)=>{
         if(err){
@@ -37,7 +38,7 @@ async function get_data(py_file_name,db_name,data_array,callback){
     db.each("SELECT * from "+db_name,(err,row)=>{
     
         data_array.push(row);
-        console.log(row.team_name);
+        //console.log(row.team_name);
         
     });
     db.close();
