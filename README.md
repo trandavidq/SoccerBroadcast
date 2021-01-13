@@ -8,3 +8,4 @@ Back-end: Node.js,Python, SQLite3
 ## How to run this app:
 1. Once downloaded, go into terminal, cd to the directory, and type `npm install` to get required node modules to run the file.
 2. Type node index.js , and go to localhost:3000
+3. If the standings aren't updated (small bug), you may have to run it again, and it should display updated standings.
