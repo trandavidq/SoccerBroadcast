@@ -1,5 +1,5 @@
 # SoccerBroadcast
-This App displays real-time standings of some of the most famous European soccer leagues, including the English Premier League, Bundesliga, La Liga, and more. Data is scraped from the football (soccer) section of the Guardian UK's website.
+This web scraper displays real-time standings of some of the most famous European soccer leagues, including the English Premier League, Bundesliga, La Liga, and more. Data is scraped from the football (soccer) section of the Guardian UK's website.
 
 Front-end: HTML, CSS, JS \
 Back-end: Node.js,Python, SQLite3
